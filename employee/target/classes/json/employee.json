@@ -1,0 +1,36 @@
+{
+  "record":{
+    "employee":[
+      {
+        "name":"Employee1",
+		"dateOfBirth":"10/12/1985",
+		"qualification":"B.Sc",
+		"phoneNumber": "9012312345"
+      },
+     {
+        "name":"Employee2",
+		"dateOfBirth":"02/12/1987",
+		"qualification":"BE",
+		"phoneNumber": "9012312346"
+      },
+	  {
+        "name":"Employee3",
+		"dateOfBirth":"23/02/1990",
+		"qualification":"ME",
+		"phoneNumber": "9012312347"
+      },
+	  {
+        "name":"Employee4",
+		"dateOfBirth":"12/05/1988",
+		"qualification":"MCA",
+		"phoneNumber": "9012312348"
+      },
+	  {
+        "name":"Employee5",
+		"dateOfBirth":"24/06/1989",
+		"qualification":"B.Com",
+		"phoneNumber": "9012312349"
+      }
+    ]
+  }
+}
