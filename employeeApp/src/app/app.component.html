@@ -19,10 +19,10 @@
       <tr *ngFor="let employee of employees">
         <td>{{ employee.name }}</td>
         <td>{{ employee.rollNumber }}</td>
-        <td>{{ employee.language }}</td>
-        <td>{{ employee.maths }}</td>
-        <td>{{ employee.physics }}</td>
-        <td>{{ employee.science }}</td>
+        <td [ngClass]="{'bold': employee.language >= 90}">{{ employee.language }}</td>
+        <td [ngClass]="{'bold': employee.maths >= 90}">{{ employee.maths }}</td>
+        <td [ngClass]="{'bold': employee.physics >= 90}">{{ employee.physics }}</td>
+        <td [ngClass]="{'bold': employee.science >= 90}">{{ employee.science }}</td>
         <td>{{ employee.total }}</td>
         <td>{{ employee.rank }}</td>
       </tr>
