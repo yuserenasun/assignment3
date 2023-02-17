@@ -15,6 +15,6 @@ export class EmployeeService {
 
   // connect to backend and set GET request
   public getEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(`${this.baseUrl}/employees`);
+    return this.http.get<Employee[]>(`${this.baseUrl}/students`);
   }
 }

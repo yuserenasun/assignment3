@@ -1,6 +1,10 @@
 export interface Employee {
   name: string;
-  dateOfBirth: string;
-  qualification: string;
-  phoneNumber: string;
+  rollNumber: string;
+  language: number;
+  maths: number;
+  physics: number;
+  science: number;
+  total: number;
+  rank: number;
 }
