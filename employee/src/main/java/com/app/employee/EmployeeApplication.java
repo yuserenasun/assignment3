@@ -17,6 +17,7 @@ public class EmployeeApplication {
 		SpringApplication.run(EmployeeApplication.class, args);
 	}
 
+	// To avoid CORS error
 	@Bean
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();

@@ -14,24 +14,26 @@ import java.util.List;
 
 @Service
 public class EmployeeService {
-    private List<Employee> employees;
+
+    private final List<Employee> employees;
+    private final ObjectMapper objectMapper;
 
     public EmployeeService() {
-        ObjectMapper objectMapper = new ObjectMapper();
+        this.objectMapper = new ObjectMapper();
         try {
             // Read the JSON file and extract the "student" array
-            JsonNode rootNode = objectMapper.readTree(new File("src/main/resources/json/student.json"));
+            JsonNode rootNode = this.objectMapper.readTree(new File("src/main/resources/json/student.json"));
             JsonNode employeesNode = rootNode.path("record").path("studentMarks");
 
             // Convert the "student" array to a List<Employee>
             employees = objectMapper.convertValue(employeesNode, new TypeReference<List<Employee>>(){});
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Error reading employee data from file", e);
         }
     }
 
-    public List<Employee> calculateTotalAndRank(List<Employee> employees) {
-        // Calculate total mark for each employee and keep track of the maximum total mark seen so far
+    private List<Employee> calculateTotalAndRank(List<Employee> employees) {
+        // Calculate total mark for each employee
         for (Employee employee : employees) {
             int totalMark = employee.getLanguage() + employee.getMaths() + employee.getPhysics() + employee.getScience();
             employee.setTotal(totalMark);
@@ -56,7 +58,6 @@ public class EmployeeService {
     }
 
     public List<Employee> getAllEmployees() {
-        return this.calculateTotalAndRank(employees);
+        return calculateTotalAndRank(employees);
     }
 }
-
